@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Boleta Venta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Monto</th>
+      <th>Tipo pago</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boleta_venta.each do |boleta_ventum| %>
+      <tr>
+        <td><%= boleta_ventum.fecha %></td>
+        <td><%= boleta_ventum.monto %></td>
+        <td><%= boleta_ventum.tipo_pago %></td>
+        <td><%= boleta_ventum.cantidad %></td>
+        <td><%= link_to 'Show', boleta_ventum %></td>
+        <td><%= link_to 'Edit', edit_boleta_ventum_path(boleta_ventum) %></td>
+        <td><%= link_to 'Destroy', boleta_ventum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boleta Ventum', new_boleta_ventum_path %>

@@ -1,0 +1,1 @@
+json.partial! "boleta_venta/boleta_ventum", boleta_ventum: @boleta_ventum

@@ -1,0 +1,37 @@
+<%= form_for(boleta_ventum) do |f| %>
+  <% if boleta_ventum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(boleta_ventum.errors.count, "error") %> prohibited this boleta_ventum from being saved:</h2>
+
+      <ul>
+      <% boleta_ventum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.datetime_select :fecha %>
+  </div>
+
+  <div class="field">
+    <%= f.label :monto %>
+    <%= f.text_field :monto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_pago %>
+    <%= f.text_field :tipo_pago %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cantidad %>
+    <%= f.text_field :cantidad %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

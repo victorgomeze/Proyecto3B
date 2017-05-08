@@ -1,0 +1,2 @@
+module BoletaVentaHelper
+end

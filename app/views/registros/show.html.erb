@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @registro.fecha %>
+</p>
+
+<p>
+  <strong>Hora ingreso:</strong>
+  <%= @registro.hora_ingreso %>
+</p>
+
+<p>
+  <strong>Hora salida:</strong>
+  <%= @registro.hora_salida %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @registro.datetime %>
+</p>
+
+<%= link_to 'Edit', edit_registro_path(@registro) %> |
+<%= link_to 'Back', registros_path %>

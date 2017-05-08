@@ -1,0 +1,2 @@
+class BoletaVentum < ApplicationRecord
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @boleta_ventum.fecha %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @boleta_ventum.monto %>
+</p>
+
+<p>
+  <strong>Tipo pago:</strong>
+  <%= @boleta_ventum.tipo_pago %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @boleta_ventum.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_boleta_ventum_path(@boleta_ventum) %> |
+<%= link_to 'Back', boleta_venta_path %>
