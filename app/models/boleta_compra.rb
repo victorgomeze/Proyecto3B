@@ -1,0 +1,2 @@
+class BoletaCompra < ApplicationRecord
+end

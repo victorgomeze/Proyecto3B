@@ -1,0 +1,1 @@
+json.partial! "carro_ventes/carro_vente", carro_vente: @carro_vente

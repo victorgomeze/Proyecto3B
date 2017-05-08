@@ -1,0 +1,1 @@
+json.array! @carro_ventes, partial: 'carro_ventes/carro_vente', as: :carro_vente
