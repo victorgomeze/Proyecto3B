@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BoletaVentumTest < ActiveSupport::TestCase
+class CarroVentaTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

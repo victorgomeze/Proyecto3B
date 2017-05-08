@@ -4,7 +4,7 @@ class BoletaVentaController < ApplicationController
   # GET /boleta_venta
   # GET /boleta_venta.json
   def index
-    @boleta_venta = BoletaVentum.all
+    @boleta_venta = BoletaVenta.all
   end
 
   # GET /boleta_venta/1
@@ -14,7 +14,7 @@ class BoletaVentaController < ApplicationController
 
   # GET /boleta_venta/new
   def new
-    @boleta_ventum = BoletaVentum.new
+    @boleta_ventum = BoletaVenta.new
   end
 
   # GET /boleta_venta/1/edit
@@ -24,11 +24,11 @@ class BoletaVentaController < ApplicationController
   # POST /boleta_venta
   # POST /boleta_venta.json
   def create
-    @boleta_ventum = BoletaVentum.new(boleta_ventum_params)
+    @boleta_ventum = BoletaVenta.new(boleta_ventum_params)
 
     respond_to do |format|
       if @boleta_ventum.save
-        format.html { redirect_to @boleta_ventum, notice: 'Boleta ventum was successfully created.' }
+        format.html { redirect_to @boleta_ventum, notice: 'Boleta venta was successfully created.' }
         format.json { render :show, status: :created, location: @boleta_ventum }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BoletaVentaController < ApplicationController
   def update
     respond_to do |format|
       if @boleta_ventum.update(boleta_ventum_params)
-        format.html { redirect_to @boleta_ventum, notice: 'Boleta ventum was successfully updated.' }
+        format.html { redirect_to @boleta_ventum, notice: 'Boleta venta was successfully updated.' }
         format.json { render :show, status: :ok, location: @boleta_ventum }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BoletaVentaController < ApplicationController
   def destroy
     @boleta_ventum.destroy
     respond_to do |format|
-      format.html { redirect_to boleta_venta_url, notice: 'Boleta ventum was successfully destroyed.' }
+      format.html { redirect_to boleta_venta_index_url, notice: 'Boleta venta was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,7 @@ class BoletaVentaController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_boleta_ventum
-      @boleta_ventum = BoletaVentum.find(params[:id])
+      @boleta_ventum = BoletaVenta.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

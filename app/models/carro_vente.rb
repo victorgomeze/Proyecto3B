@@ -1,2 +1,0 @@
-class CarroVente < ApplicationRecord
-end

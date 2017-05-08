@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   resources :boleta_venta
+  resources :carro_venta
   resources :registros
   resources :trabajadors
-=======
   resources :productos
   resources :carro_compras
-  resources :carro_ventes
   resources :boleta_compras
   resources :trabajadors
   resources :registros

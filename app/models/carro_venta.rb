@@ -1,0 +1,2 @@
+class CarroVenta < ApplicationRecord
+end

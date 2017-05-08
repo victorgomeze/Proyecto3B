@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fecha: 2017-05-08 18:59:03
+  fecha: 2017-05-08 20:05:29
   monto: 
   tipo_pago: 
   cantidad: 
 
 two:
-  fecha: 2017-05-08 18:59:03
+  fecha: 2017-05-08 20:05:29
   monto: 
   tipo_pago: 
   cantidad: 

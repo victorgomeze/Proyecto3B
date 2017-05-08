@@ -1,6 +1,6 @@
 class CreateTrabajadors < ActiveRecord::Migration[5.0]
   def change
-    create_table :trabajadors do |t|
+    create_table :trabajadores do |t|
       t.string :nombre
       t.int :rut
       t.int :telefono

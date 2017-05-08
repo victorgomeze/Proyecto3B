@@ -6,7 +6,7 @@ class BoletaVentaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get boleta_venta_url
+    get boleta_venta_index_url
     assert_response :success
   end
 
@@ -16,11 +16,11 @@ class BoletaVentaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create boleta_ventum" do
-    assert_difference('BoletaVentum.count') do
-      post boleta_venta_url, params: { boleta_ventum: { cantidad: @boleta_ventum.cantidad, fecha: @boleta_ventum.fecha, monto: @boleta_ventum.monto, tipo_pago: @boleta_ventum.tipo_pago } }
+    assert_difference('BoletaVenta.count') do
+      post boleta_venta_index_url, params: { boleta_ventum: { cantidad: @boleta_ventum.cantidad, fecha: @boleta_ventum.fecha, monto: @boleta_ventum.monto, tipo_pago: @boleta_ventum.tipo_pago } }
     end
 
-    assert_redirected_to boleta_ventum_url(BoletaVentum.last)
+    assert_redirected_to boleta_ventum_url(BoletaVenta.last)
   end
 
   test "should show boleta_ventum" do
@@ -39,10 +39,10 @@ class BoletaVentaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy boleta_ventum" do
-    assert_difference('BoletaVentum.count', -1) do
+    assert_difference('BoletaVenta.count', -1) do
       delete boleta_ventum_url(@boleta_ventum)
     end
 
-    assert_redirected_to boleta_venta_url
+    assert_redirected_to boleta_venta_index_url
   end
 end
