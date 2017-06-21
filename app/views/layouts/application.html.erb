@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProyectoTienda3B</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>las tres B</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <body>
-    <%= yield %>
-  </body>
+
+</head>
+<body>
+
+  <header>
+    <%if !user_signed_in? %>
+    <li class= "col-md center">
+      <%=link_to "Iniciar sesion", new_user_session_path%>
+    </li>
+    <%else%>
+        <nav class="be-red write large-padding">
+          <ul class="no-list row center-xs">
+            <li class="col-md">
+            <h4><%= link_to "Inicio", root_path %></h4>
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Compras", boleta_compras_path %></h4>    
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Ventas", boleta_venta_path %></h4>
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Clientes", clientes_path %></h4>
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Productos", productos_path %></h4>
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Prooveedores", proveedors_path %></h4>
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Trabajador", trabajadors_path %></h4>
+            </li>
+            <li class="col-md">
+              <h4><%= link_to "Registrar horas", registros_path %></h4>
+            </li>
+              <h4><% if user_signed_in? %></h4>
+            <li>
+              <h4><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></h4>
+            </li>
+          <%end%>
+        <%end%>
+      </ul>
+    </nav>
+  </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<%= yield %>
+</body>
 </html>

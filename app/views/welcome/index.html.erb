@@ -1,8 +1,9 @@
 <div class="panel panel-primary center">
   <h1> Las tres B</h1>
 </div>
-
+<% if user_signed_in? %>
 <h3> Bienvenido </h3>
-
+<h6> <%= current_user.email %></h6>
+<%end%>
 
 
