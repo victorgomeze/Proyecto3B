@@ -15,10 +15,7 @@
   <%= @registro.hora_salida %>
 </p>
 
-<p>
-  <strong>Datetime:</strong>
-  <%= @registro.datetime %>
-</p>
 
-<%= link_to 'Edit', edit_registro_path(@registro) %> |
-<%= link_to 'Back', registros_path %>
+
+<%= link_to 'Editar', edit_registro_path(@registro) %> |
+<%= link_to 'Volver', registros_path %>

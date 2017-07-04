@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621163411) do
+ActiveRecord::Schema.define(version: 20170703235737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,11 +85,10 @@ ActiveRecord::Schema.define(version: 20170621163411) do
   create_table "registros", force: :cascade do |t|
     t.datetime "fecha"
     t.datetime "hora_ingreso"
-    t.string   "hora_salida"
-    t.string   "datetime"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "trabajadores_id"
+    t.datetime "hora_salida"
   end
 
   create_table "trabajadores", force: :cascade do |t|

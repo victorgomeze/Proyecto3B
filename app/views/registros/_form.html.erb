@@ -23,13 +23,10 @@
 
   <div class="field">
     <%= f.label :hora_salida %>
-    <%= f.text_field :hora_salida %>
+    <%= f.datetime_select :hora_salida %>
   </div>
 
-  <div class="field">
-    <%= f.label :datetime %>
-    <%= f.text_field :datetime %>
-  </div>
+  
 
   <div class="actions">
     <%= f.submit %>
