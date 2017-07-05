@@ -22,14 +22,19 @@
         <td><%= producto.stock_min %></td>
         <td><%= producto.precio_compra %></td>
         <td><%= producto.precio_venta %></td>
-        <td><%= link_to 'Show', producto %></td>
-        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', producto,class:"btn btn-success"  %></td>
+        <td><%= link_to 'Editar', edit_producto_path(producto),class:"btn btn-info" %></td>
+        <td><%= link_to 'Eliminar', producto, method: :delete, data: { confirm: 'Estas seguro?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+
+
+
+
 <br>
 
-<%= link_to 'New Producto', new_producto_path %>
+<%= link_to 'New Producto', new_producto_path, class:"btn btn-primary"  %>
+<%= link_to 'Volver a Inicio', root_path %>

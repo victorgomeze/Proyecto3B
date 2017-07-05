@@ -1,59 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
   <title>las tres B</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-
 </head>
+
 <body>
 
   <header>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><h4><%= link_to "Tienda3B", root_path %></h4></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
     <%if !user_signed_in? %>
-    <li class= "col-md center">
-      <%=link_to "Iniciar sesion", new_user_session_path%>
-    </li>
     <%else%>
-        <nav class="be-red write large-padding">
-          <ul class="no-list row center-xs">
-            <li class="col-md">
-            <h4><%= link_to "Inicio", root_path %></h4>
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Compras", boleta_compras_path %></h4>    
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Ventas", boleta_venta_path %></h4>
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Clientes", clientes_path %></h4>
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Productos", productos_path %></h4>
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Prooveedores", proveedors_path %></h4>
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Trabajador", trabajadors_path %></h4>
-            </li>
-            <li class="col-md">
-              <h4><%= link_to "Registrar horas", registros_path %></h4>
-            </li>
-              <h4><% if user_signed_in? %></h4>
+        
+       
+          
+            <li class="active"></li>
+            <li class="active"><a href="#"><h4><%= link_to "Compras", boleta_compras_path %></h4></a></li>
+            <li class="active"><a href="#"><h4><%= link_to "Ventas", boleta_venta_path %></h4></a></li>
+            <li class="active"><a href="#"><h4><%= link_to "Clientes", clientes_path %></h4></a></li>
+            <li class="active"><a href="#"><h4><%= link_to "Productos", productos_path %></h4></a></li>
+            <li class="active"><a href="#"><h4><%= link_to "Prooveedores", proveedors_path %></h4></a></li>
+            <li class="active"><a href="#"><h4><%= link_to "Trabajador", trabajadors_path %></h4></a></li>
+            <li class="active"><a href="#"><h4><%= link_to "Registrar horas", registros_path %></h4></a></li>
+
+              
+            <ul class="nav navbar-nav navbar-right">
+            
+            <h4><% if user_signed_in? %></h4>
             <li>
-              <h4><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></h4>
-            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sesion <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li><a href="#"><%= link_to 'Cambiar la contraseña'%></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
+            
+          </ul>
+        </li>
+      </ul>
           <%end%>
         <%end%>
-      </ul>
-    </nav>
+      
+      
+     </ul>
+     </div>
+     </nav>
   </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

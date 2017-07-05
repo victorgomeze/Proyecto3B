@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Trabajadores</h1>
@@ -22,9 +23,10 @@
         <td><%= trabajador.telefono %></td>
         <td><%= trabajador.correo %></td>
         <td><%= trabajador.tipo_traba %></td>
-        <td><%= link_to 'Show', trabajador %></td>
-        <td><%= link_to 'Edit', edit_trabajador_path(trabajador) %></td>
-        <td><%= link_to 'Destroy', trabajador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', trabajador,class:"btn btn-success" %></td>
+
+        <td><%= link_to 'Editar', edit_trabajador_path(trabajador),class:"btn btn-info"  %></td>
+        <td><%= link_to 'Eliminar', trabajador, method: :delete, data: { confirm: 'Estas seguro?' },class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,5 @@
 
 <br>
 
-<%= link_to 'New Trabajador', new_trabajador_path %>
+<%= link_to 'New Trabajador', new_trabajador_path, class:"btn btn-primary"  %>
+<%= link_to 'Volver a Inicio', root_path %> 

@@ -20,9 +20,9 @@
         <td><%= boleta_compra.monto %></td>
         <td><%= boleta_compra.tipo_pago %></td>
         <td><%= boleta_compra.cantidad %></td>
-        <td><%= link_to 'Show', boleta_compra %></td>
-        <td><%= link_to 'Edit', edit_boleta_compra_path(boleta_compra) %></td>
-        <td><%= link_to 'Destroy', boleta_compra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', boleta_compra,class:"btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_boleta_compra_path(boleta_compra),class:"btn btn-info" %></td>
+        <td><%= link_to 'Eliminar', boleta_compra, method: :delete, data: { confirm: 'Estas seguro?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,5 @@
 
 <br>
 
-<%= link_to 'New Boleta Compra', new_boleta_compra_path %>
+<%= link_to 'Nueva Boleta Compra', new_boleta_compra_path, class:"btn btn-primary"  %>
+<%= link_to 'Volver a Inicio', root_path %>

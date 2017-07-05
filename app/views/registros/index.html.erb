@@ -1,27 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Registros</h1>
+<h1>Lista de Registros</h1>
 
 <table>
   <thead>
     <tr>
       <th>Fecha</th>
-      <th>Hora ingreso</th>
-      <th>Hora salida</th>
-      
+      <th>Ingreso</th>
+      <th>Salida</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @registros.each do |registro| %>
+    <% @registros.each do |registry| %>
       <tr>
-        <td><%= registro.fecha %></td>
-        <td><%= registro.hora_ingreso %></td>
-        <td><%= registro.hora_salida %></td>
-        <td><%= link_to 'Mostrar', registro %></td>
-        <td><%= link_to 'Editar', edit_registro_path(registro) %></td>
-        <td><%= link_to 'Eliminar', registro, method: :delete, data: { confirm: 'Estas seguros?' } %></td>
+        <td><%= @registros.fecha %></td>
+    <td><%= @registros.hora_ingreso %></td>
+    <td><%= @registros.hora_salida %></td>
+        <td><%= link_to 'Mostrar', registros %></td>
+        <td><%= link_to 'marcar salida', edit_registro_path(registry) %></td>
+        <td><%= link_to 'Eliminar', registros, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +28,5 @@
 
 <br>
 
-<%= link_to 'Nuevo Registro', new_registro_path %>
+<%= link_to 'Nuevo Registro', new_registro_path , class:"btn btn-primary" %>
+<%= link_to 'Volver a Inicio', root_path %>

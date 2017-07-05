@@ -20,9 +20,9 @@
         <td><%= boleta_ventum.monto %></td>
         <td><%= boleta_ventum.tipo_pago %></td>
         <td><%= boleta_ventum.cantidad %></td>
-        <td><%= link_to 'Show', boleta_ventum %></td>
-        <td><%= link_to 'Edit', edit_boleta_ventum_path(boleta_ventum) %></td>
-        <td><%= link_to 'Destroy', boleta_ventum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', boleta_ventum ,class:"btn btn-success"%></td>
+        <td><%= link_to 'Editar', edit_boleta_ventum_path(boleta_ventum),class:"btn btn-info" %></td>
+        <td><%= link_to 'Eliminar', boleta_ventum, method: :delete, data: { confirm: 'Eliminar?' } , class:"btn btn-danger" %>></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,8 @@
 
 <br>
 
-<%= link_to 'New Boleta Ventum', new_boleta_ventum_path %>
+
+
+
+<%= link_to 'New Boleta Ventum', new_boleta_ventum_path, class:"btn btn-primary"  %>
+<%= link_to 'Volver a Inicio', root_path %>

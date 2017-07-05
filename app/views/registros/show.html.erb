@@ -1,20 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @registro.fecha %>
-</p>
+<h1> Mostrar Registros </h1>
+<table class= "striped">
+  <thead>
+    <tr>
+       <th data-field="Fecha">Fecha</th>
+      <th data-field="Ingreso">Ingreso</th>
+      <th data-field="Salida">Salida</th>
+      <th data-field="Horas Trabajadas">Horas Trabajadas</th>
+      
+      
+      
 
-<p>
-  <strong>Hora ingreso:</strong>
-  <%= @registro.hora_ingreso %>
-</p>
+    </tr>
 
-<p>
-  <strong>Hora salida:</strong>
-  <%= @registro.hora_salida %>
-</p>
-
+  </thead>
+  
+  <% t0=@registros.ingreso%>
+  <% t1=@registros.salida%>
+  
+  <%if( @registros.salida !=nil)%>
+  <% t2 = (t1-t0)/3600 %>
+  <%end%>
+  <tbody>
+    <td><%= @registros.fecha %></td>
+    <td><%= @registros.hora_ingreso %></td>
+    <td><%= @registros.hora_salida %></td>
+    <td><%= t2 %></td>
+  </tbody>
+</table> 
 
 
 <%= link_to 'Editar', edit_registro_path(@registro) %> |
