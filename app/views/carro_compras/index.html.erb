@@ -14,9 +14,9 @@
     <% @carro_compras.each do |carro_compra| %>
       <tr>
         <td><%= carro_compra.cantidad_prod %></td>
-        <td><%= link_to 'Show', carro_compra %></td>
-        <td><%= link_to 'Edit', edit_carro_compra_path(carro_compra) %></td>
-        <td><%= link_to 'Destroy', carro_compra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', carro_compra %></td>
+        <td><%= link_to 'Editar', edit_carro_compra_path(carro_compra) %></td>
+        <td><%= link_to 'Eliminar', carro_compra, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Carro Compra', new_carro_compra_path %>
+<%= link_to 'Nuevo Carro de Compra', new_carro_compra_path %>

@@ -14,9 +14,9 @@
     <% @carro_venta.each do |carro_ventum| %>
       <tr>
         <td><%= carro_ventum.cantidad %></td>
-        <td><%= link_to 'Show', carro_ventum %></td>
-        <td><%= link_to 'Edit', edit_carro_ventum_path(carro_ventum) %></td>
-        <td><%= link_to 'Destroy', carro_ventum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostar', carro_ventum %></td>
+        <td><%= link_to 'Editar', edit_carro_ventum_path(carro_ventum) %></td>
+        <td><%= link_to 'Eliminar', carro_ventum, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Carro Ventum', new_carro_ventum_path %>
+<%= link_to 'Nuevo Carro de Venta', new_carro_ventum_path %>
