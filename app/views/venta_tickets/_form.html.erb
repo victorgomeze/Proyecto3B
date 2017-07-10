@@ -1,10 +1,10 @@
-<%= form_for(boleta_ventum) do |f| %>
-  <% if boleta_ventum.errors.any? %>
+<%= form_for(venta_ticket) do |f| %>
+  <% if venta_ticket.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(boleta_ventum.errors.count, "error") %> prohibited this boleta_ventum from being saved:</h2>
+      <h2><%= pluralize(venta_ticket.errors.count, "error") %> prohibited this venta_ticket from being saved:</h2>
 
       <ul>
-      <% boleta_ventum.errors.full_messages.each do |message| %>
+      <% venta_ticket.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -19,19 +19,19 @@
 <h5 class="text-center text-muted">
   <div class="field">
     <%= f.label :monto %>
-    <%= f.text_field :monto %>
+    <%= f.number_field :monto %>
   </div>
 </h5>
 <h5 class="text-center text-muted">
   <div class="field">
     <%= f.label :tipo_pago %>
-    <%= f.text_field :tipo_pago %>
+    <%= f.number_field :tipo_pago %>
   </div>
 </h5>
 <h5 class="text-center text-muted">
   <div class="field">
     <%= f.label :cantidad %>
-    <%= f.text_field :cantidad %>
+    <%= f.number_field :cantidad %>
   </div>
 </h5>
 <h5 class="text-center text-muted">

@@ -1,0 +1,1 @@
+json.array! @venta_tickets, partial: 'venta_tickets/venta_ticket', as: :venta_ticket

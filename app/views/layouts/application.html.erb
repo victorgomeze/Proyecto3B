@@ -26,13 +26,12 @@
     <li class="active"></li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Iniciar sesion", user_session_path %></a></li></button>
 
     <%else%>
-        
-       
-          
             <li class="active"></li>
             <button type="button" class="btn btn-default navbar-btn"><%= link_to "Compras", boleta_compras_path %></button>
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Ventas", boleta_venta_path %></button>
+            
+            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Ventas", venta_tickets_path %></button>
+
             <li class="active"></li>
             <button type="button" class="btn btn-default navbar-btn"><%= link_to "Clientes", clientes_path %></button>
             <li class="active"></li>
@@ -43,9 +42,6 @@
             <button type="button" class="btn btn-default navbar-btn"><%= link_to "Trabajador", trabajadors_path %></button>
             <li class="active"></li>
             <button type="button" class="btn btn-default navbar-btn"><%= link_to "Registrar horas", registros_path %></button>
-            
-
-              
             <ul class="nav navbar-nav navbar-right">
             
             <h4><% if user_signed_in? %></h4>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :venta_tickets
   devise_for :users
-  resources :boleta_venta
   resources :carro_venta
   resources :registros
   resources :trabajadors

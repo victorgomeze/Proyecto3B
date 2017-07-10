@@ -1,1 +1,0 @@
-json.array! @boleta_venta, partial: 'boleta_venta/boleta_ventum', as: :boleta_ventum
