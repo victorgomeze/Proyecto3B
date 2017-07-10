@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
-
+<h5 class="text-center text-muted">
 <p>
   <strong>Fecha:</strong>
   <%= @boleta_compra.fecha %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Monto:</strong>
   <%= @boleta_compra.monto %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Tipo pago:</strong>
   <%= @boleta_compra.tipo_pago %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Cantidad:</strong>
   <%= @boleta_compra.cantidad %>
 </p>
+</h5>
 
-<%= link_to 'Edit', edit_boleta_compra_path(@boleta_compra) %> |
-<%= link_to 'Back', boleta_compras_path %>
+<h5 class="text-center text-muted"><%= link_to 'Editar', edit_boleta_compra_path(@boleta_compra) %></h5> |
+<h5 class="text-center text-muted"><%= link_to 'Volver', boleta_compras_path %></h5>

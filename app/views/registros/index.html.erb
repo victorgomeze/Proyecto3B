@@ -2,7 +2,9 @@
 
 <h1>Lista de Registros</h1>
 
-<table>
+<div class="panel panel-default">
+  
+  <table class="table">
   <thead>
     <tr>
       <th>Fecha</th>
@@ -25,7 +27,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'Nuevo Registro', new_registro_path , class:"btn btn-primary" %>

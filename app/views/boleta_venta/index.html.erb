@@ -2,7 +2,9 @@
 
 <h1>Boleta Venta</h1>
 
-<table>
+<div class="panel panel-default">
+  
+  <table class="table">
   <thead>
     <tr>
       <th>Fecha</th>
@@ -27,11 +29,11 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 
 
 
-<%= link_to 'New Boleta Ventum', new_boleta_ventum_path, class:"btn btn-primary"  %>
+<%= link_to 'Nueva boleta venta', new_boleta_ventum_url, class:"btn btn-primary"  %>
 <%= link_to 'Volver a Inicio', root_path %>

@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Boleta Compras</h1>
+<h1>Boleta de Compras</h1>
 
-<table>
-  <thead>
+<div class="panel panel-default">
+  
+  <table class="table">
+    <thead>
     <tr>
       <th>Fecha</th>
       <th>Monto</th>
@@ -27,7 +29,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'Nueva Boleta Compra', new_boleta_compra_path, class:"btn btn-primary"  %>

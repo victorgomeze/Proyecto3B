@@ -28,7 +28,7 @@ class RegistrosController < ApplicationController
 
     respond_to do |format|
       if @registro.save
-        format.html { redirect_to @registro, notice: 'Registro was successfully created.' }
+        format.html { redirect_to @registro, notice: 'Registro fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @registro }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RegistrosController < ApplicationController
   def update
     respond_to do |format|
       if @registro.update(registro_params)
-        format.html { redirect_to @registro, notice: 'Registro was successfully updated.' }
+        format.html { redirect_to @registro, notice: 'Registro fue editado exitosamente.' }
         format.json { render :show, status: :ok, location: @registro }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RegistrosController < ApplicationController
   def destroy
     @registro.destroy
     respond_to do |format|
-      format.html { redirect_to registros_url, notice: 'Registro was successfully destroyed.' }
+      format.html { redirect_to registros_url, notice: 'Registro fue eliminado exitosamente.' }
       format.json { head :no_content }
     end
   end

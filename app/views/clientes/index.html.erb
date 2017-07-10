@@ -2,7 +2,9 @@
 
 <h1>Clientes</h1>
 
-<table>
+<div class="panel panel-default">
+  
+  <table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -27,11 +29,11 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 
 
 
 <br>
 
-<%= link_to 'New Cliente', new_cliente_path, class:"btn btn-primary"  %>
+<%= link_to 'Nuevo Cliente', new_cliente_path, class:"btn btn-primary"  %>
 <%= link_to 'Volver a Inicio', root_path %>

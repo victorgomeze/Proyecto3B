@@ -2,7 +2,9 @@
 
 <h1>Productos</h1>
 
-<table>
+<div class="panel panel-default">
+  
+  <table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -29,12 +31,12 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 
 
 
 
 <br>
 
-<%= link_to 'New Producto', new_producto_path, class:"btn btn-primary"  %>
+<%= link_to 'Nuevo Producto', new_producto_path, class:"btn btn-primary"  %>
 <%= link_to 'Volver a Inicio', root_path %>

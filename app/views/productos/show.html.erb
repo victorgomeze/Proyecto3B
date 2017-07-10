@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
-
+<h5 class="text-center text-muted">
 <p>
   <strong>Nombre:</strong>
   <%= @producto.nombre %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Stock act:</strong>
   <%= @producto.stock_act %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Stock min:</strong>
   <%= @producto.stock_min %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Precio compra:</strong>
   <%= @producto.precio_compra %>
 </p>
-
+</h5>
+<h5 class="text-center text-muted">
 <p>
   <strong>Precio venta:</strong>
   <%= @producto.precio_venta %>
 </p>
-
-<%= link_to 'Edit', edit_producto_path(@producto) %> |
-<%= link_to 'Back', productos_path %>
+</h5>
+<h5 class="text-center text-muted"><%= link_to 'Editar', edit_producto_path(@producto) %></h5> |
+<h5 class="text-center text-muted"><%= link_to 'Volver', productos_path %></h5>

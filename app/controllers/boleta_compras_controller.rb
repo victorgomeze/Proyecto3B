@@ -28,7 +28,7 @@ class BoletaComprasController < ApplicationController
 
     respond_to do |format|
       if @boleta_compra.save
-        format.html { redirect_to @boleta_compra, notice: 'Boleta compra was successfully created.' }
+        format.html { redirect_to @boleta_compra, notice: 'Boleta de compra fue creada exitosamente.' }
         format.json { render :show, status: :created, location: @boleta_compra }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BoletaComprasController < ApplicationController
   def update
     respond_to do |format|
       if @boleta_compra.update(boleta_compra_params)
-        format.html { redirect_to @boleta_compra, notice: 'Boleta compra was successfully updated.' }
+        format.html { redirect_to @boleta_compra, notice: 'Boleta de compra fue editada exitosamente.' }
         format.json { render :show, status: :ok, location: @boleta_compra }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BoletaComprasController < ApplicationController
   def destroy
     @boleta_compra.destroy
     respond_to do |format|
-      format.html { redirect_to boleta_compras_url, notice: 'Boleta compra was successfully destroyed.' }
+      format.html { redirect_to boleta_compras_url, notice: 'Boleta compra fue eliminada exitosamente.' }
       format.json { head :no_content }
     end
   end

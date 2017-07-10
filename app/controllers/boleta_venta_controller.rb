@@ -28,7 +28,7 @@ class BoletaVentaController < ApplicationController
 
     respond_to do |format|
       if @boleta_ventum.save
-        format.html { redirect_to @boleta_ventum, notice: 'Boleta venta was successfully created.' }
+        format.html { redirect_to @boleta_ventum, notice: 'Boleta de venta fue creada exitosamente.' }
         format.json { render :show, status: :created, location: @boleta_ventum }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BoletaVentaController < ApplicationController
   def update
     respond_to do |format|
       if @boleta_ventum.update(boleta_ventum_params)
-        format.html { redirect_to @boleta_ventum, notice: 'Boleta venta was successfully updated.' }
+        format.html { redirect_to @boleta_ventum, notice: 'Boleta de venta fue editada exitosamente.' }
         format.json { render :show, status: :ok, location: @boleta_ventum }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BoletaVentaController < ApplicationController
   def destroy
     @boleta_ventum.destroy
     respond_to do |format|
-      format.html { redirect_to boleta_venta_index_url, notice: 'Boleta venta was successfully destroyed.' }
+      format.html { redirect_to boleta_venta_index_url, notice: 'Boleta de venta fue eliminada exitosamente.' }
       format.json { head :no_content }
     end
   end
