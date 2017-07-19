@@ -39,6 +39,9 @@ end
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
+gem 'spree', '~> 3.2.0'
+gem 'spree_auth_devise', '~> 3.2'
+gem 'spree_gateway', '~> 3.2'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
