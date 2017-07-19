@@ -1,8 +1,8 @@
 class BoletaVenta < ApplicationRecord
 	self.table_name = 'boleta_ventas'
-	belongs_to :cliente
-	belongs_to :vendedor
-	has_one :carro_venta
+	has_many :carro_venta, dependent: :destroy
+  	has_many :productos, through: :carro_venta
+	
 
 	#validacion fecha no null
 	validates :fecha, presence: { message: "fecha no debe estar vacio"}, confirmation: true

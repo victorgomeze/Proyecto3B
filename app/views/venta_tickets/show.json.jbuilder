@@ -1,1 +1,0 @@
-json.partial! "venta_tickets/venta_ticket", venta_ticket: @venta_ticket

@@ -17,7 +17,9 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
-      <%= link_to image_tag("3Blogo.png", alt: "3Blogo"), root_path, class: 'navbar-brand' %>
+      
+    
+    <a href="http://localhost:3000/"> <img src="/3Blogo.png"  height="50" width="50"/> </a>
       
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,21 +29,21 @@
 
     <%else%>
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Compras", boleta_compras_path %></button>
+            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Compras" %></button>
             <li class="active"></li>
             
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Ventas", venta_tickets_path %></button>
+            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Ventas" %></button>
 
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Clientes", clientes_path %></button>
+            
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Productos", productos_path %></button>
+            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Productos"%></button>
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Prooveedores", proveedors_path %></button>
+            
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Trabajador", trabajadors_path %></button>
+            
             <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Registrar horas", registros_path %></button>
+            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Registrar horas"%></button>
             <ul class="nav navbar-nav navbar-right">
             
             <h4><% if user_signed_in? %></h4>

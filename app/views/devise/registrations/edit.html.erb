@@ -8,6 +8,32 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+  <h5 class="text-center text-muted">
+  <div class="field">
+    <%= f.label :nombre %> <i>(Necesita la contraseña actual para realizar cambios)</i><br />
+    <%= f.password_field :nombre, autocomplete: "off" %>
+  </div>
+</h5>
+<h5 class="text-center text-muted">
+  <div class="field">
+    <%= f.label :telefono %> <i>(Necesita la contraseña actual para realizar cambios)</i><br />
+    <%= f.number_field :telefono, autocomplete: "off" %>
+  </div>
+</h5>
+
+<h5 class="text-center text-muted">
+  <div class="field">
+    <%= f.label :user_role %> <i>(Necesita la contraseña actual para realizar cambios)</i><br />
+    <%= f.text_field :user_role, autocomplete: "off" %>
+  </div>
+</h5>
+
+<h5 class="text-center text-muted">
+  <div class="field">
+    <%= f.label :current_password %> <i>(Necesita la contraseña actual para realizar cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+</h5>
 <h5 class="text-center text-muted">
   <div class="field">
     <%= f.label :password %> <i>(Deje en blanco si no desea realizar cambios)</i><br />

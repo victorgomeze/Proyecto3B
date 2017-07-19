@@ -10,20 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710215956) do
+ActiveRecord::Schema.define(version: 20170718221804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "boleta_compras", force: :cascade do |t|
-    t.datetime "fecha"
-    t.integer  "monto"
-    t.integer  "tipo_pago"
-    t.integer  "cantidad"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "trabajadores_id"
-    t.integer  "proveedores_id"
+  create_table "articulos", primary_key: "codigo", force: :cascade do |t|
+    t.string   "descripcion"
+    t.integer  "existencia"
+    t.boolean  "status",       default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "categoria_id"
+    t.index ["categoria_id"], name: "index_articulos_on_categoria_id", using: :btree
+  end
+
+  create_table "articuloss", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.integer  "stockmin"
+    t.integer  "stockact"
+    t.integer  "precio_com"
+    t.integer  "precio_ven"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "boleta_ventas", force: :cascade do |t|
@@ -31,35 +41,78 @@ ActiveRecord::Schema.define(version: 20170710215956) do
     t.integer  "monto"
     t.integer  "tipo_pago"
     t.integer  "cantidad"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "cliente_id"
-    t.integer  "trabajadores_id"
-  end
-
-  create_table "carro_compras", force: :cascade do |t|
-    t.integer  "cantidad_prod"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "productos_id"
-    t.integer  "boleta_compras_id"
-  end
-
-  create_table "carro_ventas", force: :cascade do |t|
-    t.integer  "cantidad"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "boleta_ventas_id"
-    t.integer  "productos_id"
-  end
-
-  create_table "clientes", force: :cascade do |t|
-    t.string   "nombre"
-    t.integer  "rut"
-    t.string   "correo"
-    t.integer  "telefono"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categorias", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "compra", force: :cascade do |t|
+    t.datetime "fecha"
+    t.integer  "total"
+    t.integer  "vendedor"
+    t.integer  "det_compra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "departamentos", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "titular"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "det_compra", force: :cascade do |t|
+    t.integer  "articulo"
+    t.integer  "cantidad"
+    t.integer  "compra"
+    t.integer  "vendedor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "det_ventas", force: :cascade do |t|
+    t.integer  "articulo"
+    t.integer  "cantidad"
+    t.integer  "venta"
+    t.integer  "vendedor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enviarpedidos", force: :cascade do |t|
+    t.integer  "solicitado"
+    t.integer  "surtido"
+    t.integer  "pedido_id"
+    t.integer  "articulo_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.integer  "stockmin"
+    t.integer  "stockact"
+    t.integer  "preciocom"
+    t.integer  "precioven"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "pedidos", force: :cascade do |t|
+    t.integer  "codigo"
+    t.integer  "departamento_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["departamento_id"], name: "index_pedidos_on_departamento_id", using: :btree
+    t.index ["user_id"], name: "index_pedidos_on_user_id", using: :btree
   end
 
   create_table "productos", force: :cascade do |t|
@@ -72,31 +125,47 @@ ActiveRecord::Schema.define(version: 20170710215956) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "proveedores", force: :cascade do |t|
-    t.string   "nombre"
-    t.integer  "rut"
-    t.string   "correo"
-    t.integer  "telefono"
-    t.string   "empresa"
+  create_table "purchase_details", force: :cascade do |t|
+    t.integer  "articulo"
+    t.integer  "cantidad"
+    t.integer  "compra"
+    t.integer  "vendedor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "registros", force: :cascade do |t|
+  create_table "purchases", force: :cascade do |t|
     t.datetime "fecha"
-    t.datetime "hora_ingreso"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "trabajadores_id"
-    t.datetime "hora_salida"
+    t.integer  "total"
+    t.integer  "vendedor"
+    t.integer  "det_compra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "trabajadores", force: :cascade do |t|
+  create_table "sale_details", force: :cascade do |t|
+    t.integer  "articulo"
+    t.integer  "cantidad"
+    t.integer  "compra"
+    t.integer  "vendedor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.datetime "fecha"
+    t.integer  "total"
+    t.integer  "vendedor"
+    t.integer  "det_venta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sellers", force: :cascade do |t|
     t.string   "nombre"
-    t.integer  "rut"
+    t.string   "email"
     t.integer  "telefono"
-    t.string   "correo"
-    t.integer  "tipo_traba"
+    t.integer  "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -116,26 +185,52 @@ ActiveRecord::Schema.define(version: 20170710215956) do
     t.datetime "updated_at",                          null: false
     t.string   "nombre"
     t.string   "permisos"
+    t.integer  "telefono"
+    t.string   "rut"
+    t.boolean  "admin"
+    t.boolean  "vendedor"
+    t.boolean  "user_role"
+    t.string   "usuario"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "venta_tickets", force: :cascade do |t|
-    t.datetime "fecha"
-    t.integer  "monto"
-    t.integer  "tipo_pago"
-    t.integer  "cantidad"
+  create_table "vendedor", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "email"
+    t.string   "telefono"
+    t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "boleta_compras", "proveedores", column: "proveedores_id"
-  add_foreign_key "boleta_compras", "trabajadores", column: "trabajadores_id"
-  add_foreign_key "boleta_ventas", "clientes"
-  add_foreign_key "boleta_ventas", "trabajadores", column: "trabajadores_id"
-  add_foreign_key "carro_compras", "boleta_compras", column: "boleta_compras_id"
-  add_foreign_key "carro_compras", "productos", column: "productos_id"
-  add_foreign_key "carro_ventas", "boleta_ventas", column: "boleta_ventas_id"
-  add_foreign_key "carro_ventas", "productos", column: "productos_id"
-  add_foreign_key "registros", "trabajadores", column: "trabajadores_id"
+  create_table "venta", force: :cascade do |t|
+    t.datetime "fecha"
+    t.integer  "total"
+    t.integer  "vendedor"
+    t.integer  "det_venta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venta_det", force: :cascade do |t|
+    t.integer "producto"
+    t.integer "cantidad"
+    t.integer "venta"
+    t.integer "vendedor"
+  end
+
+  create_table "ventas", force: :cascade do |t|
+    t.datetime "fecha"
+    t.integer  "total"
+    t.integer  "vendedor"
+    t.integer  "venta_det"
+  end
+
+  add_foreign_key "compra", "det_compra", column: "det_compra"
+  add_foreign_key "det_compra", "articuloss", column: "articulo"
+  add_foreign_key "det_compra", "vendedor", column: "vendedor"
+  add_foreign_key "det_ventas", "articuloss", column: "articulo"
+  add_foreign_key "det_ventas", "vendedor", column: "vendedor"
+  add_foreign_key "venta", "det_ventas", column: "det_venta"
 end

@@ -1,6 +1,5 @@
 class Producto < ApplicationRecord
-	has_many :carro_venta
-	has_many :carro_compra
+	
 	#Validacion stock_actual no null
 	validates :stock_act , presence: { message: " no debe estar vacio"} , confirmation: true
     #Validacion stock_actual solo numeros
@@ -11,7 +10,7 @@ class Producto < ApplicationRecord
     #Validacion stock_actual debe ser mayor que cero
     validates :stock_act, :numericality => { :greater_than => 0, message: "debe ser mayor a cero"}
     #Validacion stock_actual debe ser mayor o igual al stock minimo
-    validates :stock_act, :numericality => { :greater_than_or_equal_to => :stock_minimo, message:"Debe ser mayor al stock_minimo"  }
+    validates :stock_act, :numericality => { :greater_than_or_equal_to => :stock_min, message:"Debe ser mayor al stock_minimo"  }
     #Validacion stock_minimo no null
 	validates :stock_min , presence: { message: " no debe estar vacio"} , confirmation: true
     #Validacion stock_minimo solo numeros
@@ -19,6 +18,8 @@ class Producto < ApplicationRecord
     message: "Solo se aceptan numeros" }
     #Validacion stock_minimo debe ser mayor a cero
     validates :stock_min, :numericality => { :greater_than => 0, message: "debe ser mayor a cero"}
+    #Validar nombre unico
+    validates :nombre, uniqueness: true
     #Validacion nombre no null
     validates :nombre , presence: { message: "no debe estar vacio"} , confirmation: true
     #Validacion nombre solo letras

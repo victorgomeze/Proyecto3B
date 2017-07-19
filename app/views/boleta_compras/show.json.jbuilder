@@ -1,1 +1,0 @@
-json.partial! "boleta_compras/boleta_compra", boleta_compra: @boleta_compra
