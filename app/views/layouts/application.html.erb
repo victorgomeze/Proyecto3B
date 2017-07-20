@@ -1,73 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-  <title>las tres B</title>
+  <title>Spree</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
 <body>
 
-  <header>
-  <nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      
-      
-    
-    <a href="http://localhost:3000/"> <img src="/3Blogo.png"  height="50" width="50"/> </a>
-      
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-    <%if !user_signed_in? %>
-    <li class="active"></li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Iniciar sesion", user_session_path %></a></li></button>
-
-    <%else%>
-            <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Compras" %></button>
-            <li class="active"></li>
-            
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Ventas" %></button>
-
-            <li class="active"></li>
-            
-            <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Productos"%></button>
-            <li class="active"></li>
-            
-            <li class="active"></li>
-            
-            <li class="active"></li>
-            <button type="button" class="btn btn-default navbar-btn"><%= link_to "Registrar horas"%></button>
-            <ul class="nav navbar-nav navbar-right">
-            
-            <h4><% if user_signed_in? %></h4>
-            <li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= current_user.email %> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-            <li><a href="#"><%= link_to 'Cambiar la contraseña',edit_user_registration_path %></a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#"><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
-            
-          </ul>
-        </li>
-      </ul>
-          <%end%>
-        <%end%>
-      
-      
-     </ul>
-     </div>
-     </nav>
-  </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 <%= yield %>
+
 </body>
 </html>
