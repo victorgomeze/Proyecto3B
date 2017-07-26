@@ -6,19 +6,17 @@
       <%= Spree.t(:first_name) %><abbr class="required" title="required" >*</abbr>
     <% end %>
 
-    <%= form.text_field :firstname, class: 'form-control required', placeholder:'Su nombre de usuario',
-         required_pattern: '[Aa-Zz]',
-         title:'Ingrese datos validos' %>
+    <%= form.text_field :firstname, class: 'form-control required'  %>
 
   </p>
 
 
-  <!-- <p class="form-group" id=<%="#{address_id}lastname" %>>
+  <p class="form-group" id=<%="#{address_id}lastname" %>>
     <%= form.label :lastname do %>
       <%= Spree.t(:last_name) %><abbr class="required" title="required">*</abbr>
     <% end %>
     <%= form.text_field :lastname, class: 'form-control required' , pattern:"[Aa-Zz]{1,20}", title: "Ingrese datos validos"%>
-  </p>  -->
+  </p> 
 
   
   <% if Spree::Config[:company] %>
@@ -82,12 +80,12 @@
     <% end %>
     <%= form.text_field :zipcode, class: "form-control #{'required' if address.require_zipcode?}" , pattern:"[0-9]{1,9}", title: "Ingrese datos validos" %>
   </p>
- <!--  <p class="form-group" id=<%="#{address_id}phone" %>>
+ <p class="form-group" id=<%="#{address_id}phone" %>>
     <%= form.label :phone do %>
       <%= Spree.t(:phone) %><% if address.require_phone? %><abbr class="required" title="required">*</abbr><% end %>
     <% end %>
     <%= form.phone_field :phone, class: "form-control #{'required' if address.require_phone?}" , pattern:"[0-9]{7,9}", title: "Ingrese datos validos"  %>
-  </p> -->
+  </p> 
 
   <% if Spree::Config[:alternative_shipping_phone] %>
     <p class="form-group" id=<%="#{address_id}altphone" %>>
